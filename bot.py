@@ -3,15 +3,15 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Hello! I'm alive. My creator is Rapheal Arigho.")
+    await update.message.reply_text("Hello! I am Mirage. Ask me anything.")
 
 async def creator(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("My creator is Rapheal Arigho.")
+    await update.message.reply_text("My creator is Rapheal.")
 
 async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE):
     text = update.message.text.lower()
-    if "who created you" in text or "who made you" in text or "who is your creator" in text:
-        await update.message.reply_text("My creator is Rapheal Arigho.")
+    if "who created you" in text or "who made you" in text:
+        await update.message.reply_text("My creator is Rapheal.")
     else:
         await update.message.reply_text(f"You said: {update.message.text}")
 
